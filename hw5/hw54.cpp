@@ -33,9 +33,12 @@ float getTotalWeight(const Boat& boat,const Car& car)
 
 int main()
 {
+//调用构造函数，定义Boat类实例boat和Car类实例car
     const Boat boat(1.f);
     const Car car(2.f);
-    float sum=getTotalWeight(boat,car);
+//计算实例car和boat的重量和 
+   float sum=getTotalWeight(boat,car);
+//打印两者的重量和
     cout<<"Totalweight:"<<sum<<endl;
     return 0;
     
