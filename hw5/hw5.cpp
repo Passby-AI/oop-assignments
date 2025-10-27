@@ -13,9 +13,13 @@ static int n;
 using namespace std;
 int main()
 {
+	//对n赋值
     n=5;
+//显示当前n的值
     cout<<n<<endl;
+//调用fn1()
    fn1(n); 
+//再次显示当前n的值
     cout<<n<<endl;
     return 0;
 
