@@ -5,6 +5,7 @@
 #include <iostream>
 
 using namespace std;
+//前向声明Car类
 class Car;
 class Boat
 {
@@ -23,6 +24,7 @@ class Car
     private:
         float weight;
 };
+//友元函数getTotalWeight()，计算重量和
 
 float getTotalWeight(const Boat& boat,const Car& car)
 {
