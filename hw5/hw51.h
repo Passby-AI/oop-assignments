@@ -7,10 +7,16 @@
 
 4. 定义 Boat 与 Car 两个类，二者都有 weight 属性，定义二者的一个友元函数 getTotalWeight()，计算二者的重量和。
 */
+#ifndef HW51_H
+#define HW51_H
 
-void fn1(int& n)
+extern int n;
+
+void fn1()
 {
 //fn1()函数，在函数内对全局变量n赋值
     n=4;
 }
+
+#endif
 

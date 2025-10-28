@@ -9,7 +9,7 @@
  */
 #include "hw51.h"
 #include <iostream>
-static int n;
+int n;
 using namespace std;
 int main()
 {
@@ -18,7 +18,7 @@ int main()
 //显示当前n的值
     cout<<"before:"<<n<<endl;
 //调用fn1()
-   fn1(n); 
+   fn1(); 
 //再次显示当前n的值
     cout<<"after fn1:"<<n<<endl;
     return 0;

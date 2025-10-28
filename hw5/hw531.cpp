@@ -1,5 +1,6 @@
 #include "hw53.h"
-
+#include <iostream>
+using namespace std;
 int main()
 {
     X x;
@@ -10,7 +11,7 @@ int main()
     y.g(xptr);
     z.f(xptr);
     h(xptr);
-    std::cout<<"x:"<<std::endl;
+    cout<<"x:"<<endl;
     x.Print();
 }
 
