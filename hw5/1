@@ -10,7 +10,6 @@ int main()
     y.g(xptr);
     z.f(xptr);
     h(xptr);
-    std::cout<<"x:"<<std::endl;
     x.Print();
 }
 

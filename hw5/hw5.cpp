@@ -16,11 +16,11 @@ int main()
 	//对n赋值
     n=5;
 //显示当前n的值
-    cout<<n<<endl;
+    cout<<"before:"<<n<<endl;
 //调用fn1()
    fn1(n); 
 //再次显示当前n的值
-    cout<<n<<endl;
+    cout<<"after fn1:"<<n<<endl;
     return 0;
 
 
