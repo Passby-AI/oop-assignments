@@ -8,12 +8,15 @@ using namespace std;
 
 int main()
 {
+    //将数组每个元素初始化为0，避免垃圾值的干扰
     int a[5]={0};
 
+    //使用for循环获取每一个字符
     for(int i=0;i<5;i++)
     {
         cin>>a[i];
     }
+    //输出
     for(int i=0;i<5;i++)
     {
         cout<<a[i]<<" ";
