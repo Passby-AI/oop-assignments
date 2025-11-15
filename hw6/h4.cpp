@@ -10,12 +10,14 @@ using namespace std;
 int main()
 {
     string s;
+    //使用getline函数获取输入流内容，不会因为空格提前终止。
     getline(cin,s);
 
     int sum=0;
 
     for(int i=0;i<s.length();i++)
     {
+        //使用isaplha函数判断字符是否是字母
         if(isalpha(s[i])) sum++; 
     }
     
