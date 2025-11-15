@@ -1,0 +1,83 @@
+#pragma once
+#include <String>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+/*
+ *brief: book class and student class
+ */
+
+/*
+1、定义一个 Book 类，编写构造函数和析构函数并在 main() 中创建与销毁对象。
+2、定义 Student 类并组合 Book 类，使用前向引用解决依赖问题并在 main() 中演示借书。
+3、定义 struct Person 和 union Data，用 sizeof 比较结构体与联合体的内存占用。
+4、定义 enum Weekday 并编写函数输出一周七天的名称。
+*/
+class Book;
+class Student
+{
+public:
+    Student() {}
+    Student(std::string n) : name(n) {}
+    ~Student() {}
+    void Borrow(const Book &book);
+    void Return(const Book &book);
+
+private:
+    std ::string name;
+    std::vector<const Book *> borrowed;
+};
+
+class Book
+{
+public:
+    Book()
+    {
+        std::cout << "书本被创建" << std::endl;
+    }
+    Book(std::string t) : title(t)
+    {
+        std::cout << "书本被创建" << std::endl;
+    }
+    ~Book()
+    {
+        std::cout << "书本被销毁" << std::endl;
+    }
+    // 获取书本标题
+    std::string GetTitle() const
+    {
+        return title;
+    }
+
+private:
+    std::string title;
+};
+
+// 借书
+inline void Student::Borrow(const Book &book)
+{
+    std::cout << name << "借了" << book.GetTitle() << std::endl;
+    borrowed.push_back(&book);
+}
+// 还书
+void Student::Return(const Book &book)
+{
+    if (borrowed.size() <= 0)
+    {
+        // 没有借书的情况
+        std::cout << name << "没有借书" << std::endl;
+        return;
+    }
+    // 用迭代器查找是否有借指定的图书
+    std::vector<const Book *>::iterator it = std::find(borrowed.begin(), borrowed.end(), &book);
+    if (it != borrowed.end())
+    {
+        // *it 的类型是 Book*，用 -> 来访问成员函数
+        std::cout << name << "已归还 " << (*it)->GetTitle() << std::endl;
+        borrowed.erase(it);
+    }
+    else
+    {
+        std::cout << name << "未借该书本" << std::endl;
+    }
+}
