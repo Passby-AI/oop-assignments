@@ -7,7 +7,7 @@ using namespace std;
 
 
 
-void Reverse(int** lines,int n,int m)
+void PrintTranspose(int** lines,int n,int m)
 {
     //int (*result)[n]= new int[n][m];
     for(int i=0;i<m;i++)
@@ -45,7 +45,16 @@ int main()
 
     
 
-    Reverse(lines,n,m);
+    PrintTranspose(lines,n,m);
+
+    for(int i=0;i<n;i++)
+    {
+        delete [] lines[i];
+    }
+
+    delete [] lines;
+
+    return 0;
 
     
 }
