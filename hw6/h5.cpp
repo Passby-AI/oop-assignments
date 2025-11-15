@@ -9,8 +9,14 @@ using namespace std;
 
 void reverse(string &s)
 {
-    for(int i=s.length()-1;i>=0;i--)
-        cout<<s[i];
+    if(s.length()<=1)
+    {
+        return;
+    }
+    char first=s[0];
+    string rest=s.substr(1);
+    reverse(rest);
+    s=rest+first;
 }
 int main()
 {
@@ -18,5 +24,5 @@ int main()
     cin>>s;
 
     reverse(s);
-    cout<<endl;
+    cout<<s<<endl;
 }
