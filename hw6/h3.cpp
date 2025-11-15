@@ -9,7 +9,6 @@ using namespace std;
 
 void PrintTranspose(int** lines,int n,int m)
 {
-    //int (*result)[n]= new int[n][m];
     for(int i=0;i<m;i++)
     {
         for(int j=0;j<n;j++)
@@ -22,13 +21,16 @@ void PrintTranspose(int** lines,int n,int m)
 int main()
 {
     int n,m;
+    //获取行数，列数
     cout<<"The number of lines"<<endl;
     cin>>n;
     cout<<"The number of columns"<<endl;
     cin>>m;
+    //声明一个指向长度为n的，元素为整型指针的数组的指针
     int** lines=new int*[n];
     for(int i=0;i<n;i++)
     {
+        //每个指针元素指向一个长度为m的整型数组
         lines[i]=new int[m];
     }
     int s=1;
@@ -46,12 +48,13 @@ int main()
     
 
     PrintTranspose(lines,n,m);
-
+    // 释放内存
     for(int i=0;i<n;i++)
     {
+        //先释放每一行
         delete [] lines[i];
     }
-
+    //释放储存行指针的数组
     delete [] lines;
 
     return 0;
