@@ -32,6 +32,7 @@ class Dog:public Mammal
 
 int main()
 {
+//声明一个Dog类的实例
     Dog dog1{};
     return 0;
 }
