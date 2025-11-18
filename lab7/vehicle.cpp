@@ -18,13 +18,13 @@ class vehicle
 
 };
 
-class motorcar: public vehicle
+class motorcar: virtual public vehicle
 {
     protected:
         int SeatNum;
 };
 
-class bicycle: public vehicle
+class bicycle: virtual public vehicle
 {
     protected:
         int Height;
